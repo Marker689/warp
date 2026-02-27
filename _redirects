@@ -1,0 +1,6 @@
+# Cloudflare Pages redirects
+# https://developers.cloudflare.com/pages/platform/redirects/
+
+# Example:
+# /old /new 301
+# /blog/* https://blog.example.com/:splat 301

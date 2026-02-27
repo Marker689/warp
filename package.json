@@ -1,0 +1,16 @@
+{
+  "name": "warp-generator",
+  "version": "1.0.0",
+  "description": "Генератор конфигураций Cloudflare WARP",
+  "main": "src/index.html",
+  "scripts": {
+    "build": "echo 'No build step required for static site'",
+    "preview": "npx serve src"
+  },
+  "keywords": ["cloudflare", "warp", "vpn", "generator"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.0.0"
+  }
+}

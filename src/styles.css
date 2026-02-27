@@ -17,26 +17,26 @@ body {
     margin: 0 auto; /* Центрируем контейнер на странице */
 }
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Два столбца */
-    gap: 20px; /* Расстояние между контейнерами */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    max-width: 700px; /* Увеличиваем максимальную ширину, чтобы вместить два контейнера */
-    margin: 0 auto 20px; /* Центрируем и добавляем отступ снизу */
+    max-width: 500px;
+    margin: 0 auto 20px;
 }
 
-.containerAWG, .containerClash {
+.containerAWG {
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
-    padding: 20px;
+    padding: 25px;
     background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    width: 95%; /* Занимает всю ширину */
-    max-width: 300px; /* Уменьшаем ширину контейнера */
-    margin: 0 auto; /* Центрируем и добавляем отступ снизу */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 #clash
@@ -51,7 +51,7 @@ body {
     align-items: center;
     margin-bottom: 10px; /* Отступ снизу */
     width: 100%; /* Занимает всю ширину */
-    max-width: 400px; /* Ограничиваем ширину, как у контейнера */\
+    max-width: 400px; /* Ограничиваем ширину, как у контейнера */
 }
 
 .amnezia-icon {
@@ -383,39 +383,12 @@ button:disabled {
 }
 
 
-.info-button {
-  padding: 0;
-position: relative;
-margin: 0px;
-margin-left:-25px;
-left: 55px;
-bottom: 5px;
-  color: black;
-  width: 35px;
-  height: 35px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  cursor: pointer;
-  border: none;
-  
-}
-
-.info-button:hover {
-transform: none;
-    box-shadow: none;
-}
-
 .settings-btn {
   display: block;
   transition: transform 0.4s ease;
 }
 .settings-btn:hover {
   transform: rotate(60deg);
-}
-
 }
 @keyframes rot {
   from {
@@ -645,21 +618,77 @@ word-break: break-all;}
 	}
 	
     #status {display: none}
-	.containerClash {order: 3}
     #neko {order: 2;margin-top: 0px}
 	#hiddify {grid-column: 1; margin-top: 0px;}
 	#clash {margin-top: 0px;}
 }
 		
-@media (max-width: 350px) {
-	.containerAWG, .containerClash {
-    width: auto;
-    margin: 0;
+/* Кнопки скачивания AmneziaWG */
+.download-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 30px auto;
+    max-width: 400px;
+    width: 100%;
 }
-.info-button {
-    left: 37px;
+
+.download-btn {
+    display: block;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.download-btn.google-play {
+    background: linear-gradient(135deg, #3ddc84, #0f9d58);
+    color: white;
+}
+
+.download-btn.app-store {
+    background: linear-gradient(135deg, #007aff, #0056cc);
+    color: white;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.download-btn:active {
+    transform: translateY(0);
+}
+
+.download-btn .button__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+@media (max-width: 350px) {
+	.containerAWG {
+	   width: auto;
+    margin: 0;
 }
 	.grid-container {
         grid-template-columns: none;
         grid-auto-columns: 100%;}
+        
+    .download-buttons {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+    
+    .download-btn {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
 }
